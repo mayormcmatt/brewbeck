@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         new_user = params.require(:user).permit(:first_name, :last_name, :age, :email, :password, :password_confirmation)
         @user=User.new(new_user)
         if @user.save
-            flash[:success] = "Welcome to the Cook Book app!"
+            flash[:success] = "Welcome to Brewbeck!!"
             # sign_in @user
             redirect_to @user
         else

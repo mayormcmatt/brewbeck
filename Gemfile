@@ -12,8 +12,6 @@ gem 'json'
 
 gem 'typhoeus'
 
-gem 'bootstrap-sass'
-
 gem 'less-rails'
 
 gem 'pry'

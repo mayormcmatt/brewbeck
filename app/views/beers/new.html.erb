@@ -1,0 +1,27 @@
+<h3><a href="/">Back to Homepage</a></h3>
+<h2>New Recommendation</h2>
+
+<h3>Feed parameters into API call here</h3>
+
+<div>
+    <p>What mood are you in?</p>
+    <%= form_for(:beer, url: "/beers/search") do |f| %>
+        <%= f.radio_button :style_search, "25" %> <%= f.label :happy, "Happy" %>
+        <%= f.radio_button :style_search, "110" %> <%= f.label :average, "Average" %>
+        <%= f.radio_button :style_search, "42" %> <%= f.label :livid, "Livid" %><br>
+        <p>How drunk do you want to get?</p>
+        <%= f.radio_button :abv_search, "low" %> <%= f.label :abv_low, "Not Very Drunk" %>
+        <%= f.radio_button :abv_search, "high" %> <%= f.label :abv_high, "Pretty Drunk" %>
+        <p>Bitter or smooth?</p>
+        <%= f.radio_button :ibu_search, "smooth" %> <%= f.label :abv_low, "Smoother" %>
+        <%= f.radio_button :ibu_search, "bitter" %> <%= f.label :abv_high, "Mo' Bitter, Mo' Better" %>
+        <%= f.submit "Submit" %><br>
+
+    <% end %>
+
+</div>
+
+<div>
+  
+
+</div>

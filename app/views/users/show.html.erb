@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+
+    <h2>Your Profile</h2>
+
+    <div class="row">
+        <aside class="span4">
+            <div> Username: <%= @user.first_name %></div>
+            <div> Age: <%= @user.age %></div>
+            <div> Email: <%= @user.email %></div>
+            <div> City: <%= @user.city %></div>
+        </aside>
+    </div>
+
+    <div>
+        <a href="/">Return to Main Menu</a>
+    </div>
+</body>
+</html>

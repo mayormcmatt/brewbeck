@@ -4,13 +4,13 @@
 
 <div>
     
-    <ul>
-    
-        <li>Beer: <%= @refreshment.name %> </li>
-        <li>ABV: <%= @refreshment.abv %> </li>
-        <li>IBU: <%= @refreshment.ibu %> </li><br>
+    <ul class="output">
+        <%= @output.each do |info| %>
+        <li>Beer: <%= info.name %> </li>
+        <li>ABV: <%= info.abv %> </li>
+        <li>IBU: <%= info.ibu %> </li><br>
+        <% end %>
     
     </ul>
 
 </div>
-<%= debug @parsed["data"] %>

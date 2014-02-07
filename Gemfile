@@ -12,7 +12,7 @@ gem 'json'
 
 gem 'typhoeus'
 
-gem 'less-rails'
+# gem 'less-rails'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,5 +1,11 @@
 class Refreshment < ActiveRecord::Base
 
+    # def check_exists
+    #     @beer_record = Refreshment.find_by_name(self.name)
+    #     if @beer_record != nil
+
+    # end
+
     # def self.api_call
     #     if params
     #             search_str = params[:beer][:style_search]

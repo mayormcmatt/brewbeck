@@ -1,25 +1,29 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>New User</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <title>Brewbeck ~ New User</title>
+    </head>
 
-<div class="sign_up_form">
-    <div class="span6 offset3">
-        <%= form_for (@user) do |f| %>
-            <%= f.text_field :first_name, placeholder: "First Name" %><br>
-            <%= f.text_field :last_name, placeholder: "Last Name" %><br>
-            <%= f.text_field :age, placeholder: "Age (21 or Older, Please)" %><br>
-            <%= f.text_field :email, placeholder: "Email Address" %><br>
-            <%= f.text_field :city, placeholder: "City" %><br>
-            <%= f.password_field :password, placeholder: "Password" %><br>
-            <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
-            <%= f.submit "Create Account!" %>
-        <% end %>
+<body>
+    <%= render 'layouts/header' %>
+    <div class="sign_up_form">
+        <div class="span6 offset3">
+            <%= form_for (@user) do |f| %>
+                <%= f.text_field :first_name, placeholder: "First Name" %><br>
+                <%= f.text_field :last_name, placeholder: "Last Name" %><br>
+                <%= f.text_field :age, placeholder: "Age (21 or Older, Please)" %><br>
+                <%= f.text_field :email, placeholder: "Email Address" %><br>
+                <%= f.text_field :city, placeholder: "City" %><br>
+                <%= f.password_field :password, placeholder: "Password" %><br>
+                <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
+                <%= f.submit "Create Account!" %>
+            <% end %>
+        </div>
     </div>
-</div>
     
 </body>
 </html>

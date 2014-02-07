@@ -1,16 +1,33 @@
-<h3><a href="/">Back to Homepage</a></h3>
-<h3><a href="/beers/new">New Beer Search</a></h3>
-<h2>New Recommendation</h2>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="beers.css">
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two|Ewert|Playball|Monoton' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <title>Brewbeck ~ Results</title>
+</head>
+    <body>
+        <%= render 'layouts/header' %>
+        
+        <div class="things_in_show">
+        <h3><a href="/beers/new">Search Again?</a></h3>
+        <h2>Brewbeck Recommends...</h2>
+        </div>
 
-<div>
-    
-    <ul class="output">
-        <%= @output.each do |info| %>
-        <li>Beer: <%= info.name %> </li>
-        <li>ABV: <%= info.abv %> </li>
-        <li>IBU: <%= info.ibu %> </li><br>
-        <% end %>
-    
-    </ul>
+        <div class="background_container"></div>
 
-</div>
+        <div class="results_container">
+            <ul>
+                <% @refreshment.each do |info| %>
+                    <% if info.abv && info.ibu %>
+                        <li>Beer: <%= info.name %> </li>
+                        <li>ABV: <%= info.abv %> </li>
+                        <li>IBU: <%= info.ibu %> </li><br>
+                    <% end %>
+                <% end %>
+            </ul>
+        </div>
+
+    </body>
+</html>

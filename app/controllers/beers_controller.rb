@@ -13,27 +13,30 @@ class BeersController < ApplicationController
         @refreshment = Refreshment.new()
     end
 
-    def create
-    end
-
-    def check_exists
-    end
-
     def search
         if params
-            style_id = params[:beer][:style_search]
+            style_id_num = params[:beer][:style_search]
             abv_search = params[:beer][:abv_search]
             ibu_search = params[:beer][:ibu_search]
 
-            response = Typhoeus.get("http://api.brewerydb.com/v2/beers?styleId=#{style_id}&key=5a0a2875bbd1e7931736df7a5672f65f")
+            response = Typhoeus.get("http://api.brewerydb.com/v2/beers?styleId=#{style_id_num}&key=5a0a2875bbd1e7931736df7a5672f65f")
             @parsed = JSON.parse(response.response_body)
 
             @parsed["data"].each do |info|
                 @refreshment = Refreshment.find_or_create_by(name: info["name"])
+                @refreshment.style_id = info["styleID"]
                 @refreshment.abv =  info["abv"]
                 @refreshment.ibu =  info["ibu"]
                 @refreshment.save
             end
+
+            if style_id_num == "25"
+                @refreshment = Refreshment.where("style_id = 25")
+            elsif style_id_num == "110"
+                @refreshment = Refreshment.where("style_id = 110")
+            elsif style_id_num == "42"
+                @refreshment = Refreshment.where("style_id = 42")
+            end                
 
             if abv_search == "low"
                 @refreshment =  Refreshment.where("abv < 6.5")
@@ -46,7 +49,7 @@ class BeersController < ApplicationController
             elsif abv_search == "bitter"
                 @refreshment =  Refreshment.where("ibu >=35")
             end
-            @output = @refreshment
+
         end
     end
 

@@ -2,30 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="beers.css">
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two|Ewert|Playball|Monoton' rel='stylesheet' type='text/css'>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <title>Brewbeck ~ Index</title>
 </head>
 <body>
-<h3><a href="/">Back to Homepage</a></h3>
-<h2>New Recommendation</h2>
+<%= render 'layouts/header' %>
 
-<h3>Feed parameters into API call here</h3>
+<h1 class="results_title">Generate Recommendation</h1>
 
-<div>
-    <p>What mood are you in?</p>
+<div class="background_container"></div>
+<div class="radio_buttons">
+    <h2>How's Your Mood, Partner?</h2>
     <%= form_for(:beer, url: "/beers/search") do |f| %>
         <%= f.radio_button :style_search, "25" %> <%= f.label :happy, "Happy" %>
         <%= f.radio_button :style_search, "110" %> <%= f.label :average, "Average" %>
         <%= f.radio_button :style_search, "42" %> <%= f.label :livid, "Livid" %><br>
-        <p>How drunk do you want to get?</p>
+        <h2>How Many Sheets to the Wind do You Want to Be?</h2>
         <%= f.radio_button :abv_search, "low" %> <%= f.label :abv_low, "Not Very Drunk" %>
         <%= f.radio_button :abv_search, "high" %> <%= f.label :abv_high, "Pretty Drunk" %>
-        <p>Bitter or smooth?</p>
+        <h2>Finally, Smooth or Bitter?</h2>
         <%= f.radio_button :ibu_search, "smooth" %> <%= f.label :abv_low, "Smoother" %>
-        <%= f.radio_button :ibu_search, "bitter" %> <%= f.label :abv_high, "Mo' Bitter, Mo' Better" %>
-        <%= f.submit "Submit" %><br>
-
+        <%= f.radio_button :ibu_search, "bitter" %> <%= f.label :abv_high, "Mo' Bitter, Mo' Better" %><br>
+        <%= f.submit "Beer Me!" %>
     <% end %>
 
 </div>

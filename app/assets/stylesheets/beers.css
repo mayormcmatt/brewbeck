@@ -1,0 +1,122 @@
+body {
+    padding-top: 25px;
+}
+
+#navbar {
+    background-color: #4b97ab;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#navbar a {
+    color: #262626;
+}
+
+.title {
+    font-family: 'Monoton', cursive;
+    font-size: 8em;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.subtitle {
+    text-align: center
+}
+
+.results_title {
+    font-family: 'Lobster Two', cursive;
+    font-size: 5em;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    display: block;
+    position: relative;
+    }
+
+.background_container {
+    width: 1000px;
+    height: 1000px;
+    background-image: url("barney-gumble.gif");
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+#start_button {
+    display: block;
+    margin: 0px auto;
+    margin-top: 100px;
+}
+
+#start_button i {
+    color: black;
+}
+
+.radio_buttons {
+    width: 800px;
+    background: black;
+    opacity: 0.6;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.results_container {
+    width 450px;
+}
+
+.results_container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+/*.results_container ul li {
+    width: 150px;
+    height: 100px;
+    border: solid black;
+    float: left;
+    color: black;
+}*/
+
+label {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.sign_up_form {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.signin_page {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.signin_page div {
+    margin: 10px;
+}
+
+.things_in_show {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.things_in_show h2 {
+    font-family: 'Lobster Two', cursive;
+    font-size: 5em;
+}

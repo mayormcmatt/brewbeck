@@ -24,30 +24,30 @@ class BeersController < ApplicationController
 
             @parsed["data"].each do |info|
                 @refreshment = Refreshment.find_or_create_by(name: info["name"])
-                @refreshment.style_id = info["styleID"]
+                @refreshment.style_id = info["styleId"].to_s
                 @refreshment.abv =  info["abv"]
                 @refreshment.ibu =  info["ibu"]
                 @refreshment.save
             end
 
             if style_id_num == "25"
-                @refreshment = Refreshment.where("style_id = 25")
+                @refreshment = Refreshment.where("style_id = '25'")
             elsif style_id_num == "110"
-                @refreshment = Refreshment.where("style_id = 110")
+                @refreshment = Refreshment.where("style_id = '110'")
             elsif style_id_num == "42"
-                @refreshment = Refreshment.where("style_id = 42")
-            end                
+                @refreshment = Refreshment.where("style_id = '42'")
+            end
 
             if abv_search == "low"
-                @refreshment =  Refreshment.where("abv < 6.5")
+                @refreshment =  @refreshment.where("abv < 6.5")
             elsif abv_search == "high"
-                @refreshment =  Refreshment.where("abv >= 6.5")
+                @refreshment =  @refreshment.where("abv >= 6.5")
             end
 
             if ibu_search == "smooth"
-                @refreshment =  Refreshment.where("ibu < 35")
+                @refreshment =  @refreshment.where("ibu < 35")
             elsif abv_search == "bitter"
-                @refreshment =  Refreshment.where("ibu >=35")
+                @refreshment =  @refreshment.where("ibu >=35")
             end
 
         end
